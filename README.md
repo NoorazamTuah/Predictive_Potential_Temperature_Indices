@@ -1,5 +1,5 @@
 # Predictive_Potential_Temperature_Indices
-Scripts for generating results and figures for determining predictive potential of general sum/product connectivity for thermodynamic properties.
+Scripts for generating results and figures for determining predictive potential of first/second general temperature index for thermodynamic properties.
 
 **File Name	Description**
 
