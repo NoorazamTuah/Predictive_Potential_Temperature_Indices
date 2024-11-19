@@ -45,7 +45,7 @@ getIndexFns = {
 }';
 
 % Cell containing their respective labels
-indexName = {"T^1" "T^2"};
+indexName = {"T_1" "T_2"};
 
 % Variables for indexing arrays and iterating for-loops
 numData = size(expData, 2);       % one (E_{π})
@@ -72,7 +72,7 @@ for edn = 1:numData % edn = experimental data number | 1=E_{π}
     this_figure = figure(fnn); hold on;
     regLine = plot(x, y, '-', 'LineWidth', lineWidth);
     points = plot(getIndexFns{fnn}(peakAlpha), expData{1,edn}, '*', 'MarkerSize', 8, 'LineWidth', lineWidth/2);
-    bestIndexLabel = sprintf("%s_{−%s}", indexName{fnn}, as_4_dp_str(abs(peakAlpha)));
+    bestIndexLabel = sprintf("%s^{−%s}", indexName{fnn}, as_4_dp_str(abs(peakAlpha)));
     pointsLabel = sprintf("%s and %s", bestIndexLabel, expData{2,edn});
 
     % Label the scatter plot
