@@ -1,5 +1,5 @@
 % good_alpha_intervals.m
-% In this script, two plots are generated which shows α interals for
+% In this script, 2 plots are generated which shows α interals for
 % - good correlation coefficient ρ between E_{π} and T_{a}^1
 % - good correlation coefficient ρ between E_{π} and T_{a}^2
 % The limits of the intervals are also printed to console
@@ -50,7 +50,7 @@ getIndexFns = {
 }';
 
 % Cell containing their respective labels
-indexName = {"T^1" "T^2"};
+indexName = {"T^t_1", "T^t_2"};
 
 % Variables for indexing arrays and iterating for-loops
 numData = size(expData, 2);       % one (E_{π})
@@ -151,8 +151,8 @@ for ii = 1:numData
          'LineWidth', lineWidth, 'Color', colCurve{ii});
 
     % Label the plot                       [E_{π} ]        [T_{a}^1,T_{a}^2]
-    title(sprintf('between %s and %s_a', expData{2,ii}, indexName{n}));
-    xlabel('α');
+    title(sprintf('between %s and %s', expData{2,ii}, indexName{n}));
+    xlabel('θ');
     ylabel('ρ');
     drawnow;
     axis([xstart(ii,n) xend(ii,n) yend(ii,n) ystart(ii,n)]);
