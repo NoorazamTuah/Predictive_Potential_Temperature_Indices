@@ -49,7 +49,7 @@ getIndexFns = {
 }';
 
 % Cell containing their respective labels
-indexName = {"T^1", "T^2"};
+indexName = {"T^t_1", "T^t_2"};
 
 % Variables for indexing arrays and iterating for-loops
 numData = size(expData, 2);       % one (E_{π})
@@ -107,7 +107,7 @@ for ii = 1:numData
 
 
     % Generate curve label [E_{π}] [T_{a}^1/T_{a}^2]
-    curveLabels{n} = sprintf("%s and %s_a", expData{2,ii}, indexName{n});
+    curveLabels{n} = sprintf("%s and %s", expData{2,ii}, indexName{n});
 
     figure(ii); % One zoomed-out plot for each expData
     hold on;
@@ -141,7 +141,7 @@ for ii = 1:numData
        'VerticalAlignment', 'top', 'HorizontalAlignment', 'right', 'Color', [0, 0, 0.8]);
 
   % Label this expData's zoomed-in plot
-  xlabel('α');
+  xlabel('θ');
   ylabel('ρ');
   leg = legend(curves, curveLabels); % curves contains all drawn "xnear" curves
   set(leg, 'location', "northeast"); % the location of the legend box
@@ -152,7 +152,7 @@ for ii = 1:numData
 
   % Label the zoomed-out plot
   figure(ii);
-  xlabel('α');
+  xlabel('θ');
   ylabel('ρ');
   leg = legend(curvesFar, curveLabels); % curvesFar contains all drawn "xfar" curves
   set(leg, 'location', "southeast");
